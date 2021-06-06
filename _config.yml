@@ -27,6 +27,14 @@ url: "https://zairesinatra.github.io" # the base hostname & protocol for your si
 # twitter_username: jekyllrb
 github_username:  zairesinatra
 
+author:  zairesinatra
+
+title-logo: /assets/img/zs.png
+
+copyright: "zairesinatra"
+
+wechat_username: xxxzzzyyybiu
+
 # Build settings
 # remove minima theme as it is now a regular theme
 # theme: minima
