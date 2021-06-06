@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../usr/local/lib/ruby/gems/3.0.0/gems/minima-2.5.1/_includes"
+		},
+		{
+			"path": "../../../../usr/local/lib/ruby/gems/3.0.0/gems/minima-2.5.1/_layouts"
+		},
+		{
+			"path": "../../../../usr/local/lib/ruby/gems/3.0.0/gems/minima-2.5.1/_sass"
+		},
+		{
+			"path": "../../../../usr/local/lib/ruby/gems/3.0.0/gems/minima-2.5.1/assets"
+		}
+	],
+	"settings": {}
+}
