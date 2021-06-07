@@ -20,20 +20,18 @@
 
 title: zairesinatra github blog
 email: xieziyi0422@gmail.com
+author: zairesinatra
 description: >- # this means to ignore newlines until "baseurl:"
   The best time to recognize yourself is ten years ago, followed by now.
 baseurl: "/my-blog" # the subpath of your site, e.g. /blog
 url: "https://zairesinatra.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: jekyllrb
+twitter_username: xieziyi0422
 github_username:  zairesinatra
-
-author:  zairesinatra
+wechat_username: xxxzzzyyybiu
 
 title-logo: /assets/img/zs.png
 
 copyright: "zairesinatra"
-
-wechat_username: xxxzzzyyybiu
 
 # Build settings
 # remove minima theme as it is now a regular theme
