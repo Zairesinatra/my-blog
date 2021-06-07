@@ -4,5 +4,5 @@
 
 layout: home-tech
 title: "Tech"
-category: tech
+category: Tech
 ---

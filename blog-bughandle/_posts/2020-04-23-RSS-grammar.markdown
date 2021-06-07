@@ -22,8 +22,16 @@ Below is a rendering of page up to the first error.
 
 原因是 XML 文本中的某处有一个杂散的 `&`（与号字符）。记住各处都需要更改回来。
 
+更改完毕上传 Github 进行订阅测试。这里使用通过 homebrew 安装的 vienna 即可。
+
 <img src="https://res.cloudinary.com/dzb9ldnvl/image/upload/v1623072374/blog/vrss_dznlct.png" width="50%" />
+
+[vienna](http://localhost:4000/my-blog/blog-bughandle/assets/images/vienna.png)
 
 ## 结束
 
+总结一下还是多注意 xml 的语法。
+
 ### 以上
+
+本博客所有文章除特别声明外，均采用 CC BY-SA 4.0 协议 ，转载请注明出处！

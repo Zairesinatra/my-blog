@@ -2,7 +2,7 @@
 layout: post
 title:  "Build a blog based on github-page and jekyll"
 date:   2020-04-22 20:58:08 +0800
-categories: zairesinatra
+category: Tech
 ---
 
 # 基于 Github 和 Jekyll 的页面搭建
@@ -145,39 +145,16 @@ brew uninstall brew install
 
 这里要知道也是使用Ruby作为核心语言的 kramdown 是 markdown 的超集，在 Jekyll 中也是支持的，可用于 Github 搭建博客。有很多一般 markdown 所没有的语法特点，包括和 [GFM](https://help.github.com/articles/github-flavored-markdown/) 也有差异。
 
-```zsh
-xzy@zairesinatra-MBP zairesinatra.github.io % cat Gemfile
-source "https://rubygems.org"
-# Hello! This is where you manage which Jekyll version is used to run.
-# When you want to use a different version, change it below, save the
-# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
-#
-#     bundle exec jekyll serve
-#
-# This will help ensure the proper Jekyll version is running.
-# Happy Jekylling!
-gem "jekyll", "~> 4.2.0"
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minimal-mistakes-jekyll", "~> 4.23.0"
-# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
-# uncomment the line below. To upgrade, run `bundle update github-pages`.
-# gem "github-pages", group: :jekyll_plugins
-# If you have any plugins, put them here!
-group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
-end
+- 关于 gem "jekyll" ：
 
-# Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
-# and associated library.
-platforms :mingw, :x64_mingw, :mswin, :jruby do
-  gem "tzinfo", "~> 1.2"
-  gem "tzinfo-data"
-end
+在 Gemfile 文件中注意这一行代码:
 
-# Performance-booster for watching directories on Windows
-gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
-
-
-gem "webrick", "~> 1.7"
+```
+# If you want to use GitHub Pages, remove the "gem "jekyll"" above and uncomment the line below. To upgrade, run `bundle update github-pages`.
 ```
 
+在 github 中使用必须注释掉，且执行 `bundle install`、`bundle update` 代码才可 run。
+
+### 以上
+
+本博客所有文章除特别声明外，均采用 CC BY-SA 4.0 协议 ，转载请注明出处！

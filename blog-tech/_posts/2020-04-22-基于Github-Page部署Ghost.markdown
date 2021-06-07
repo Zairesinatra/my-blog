@@ -2,7 +2,7 @@
 layout: post
 title:  "Deploy Ghost based on Github Page"
 date:   2020-04-22 21:58:08 +0800
-categories: zairesinatra
+category: Tech
 ---
 
 # 基于 Github Page 部署 Ghost
