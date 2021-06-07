@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "welcome to zairesinatra's tech github io page!"
+date:   2020-03-03 21:35:03 +0800
+category: tech
+---
+welcome to here
