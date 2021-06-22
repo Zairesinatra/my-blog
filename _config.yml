@@ -29,6 +29,9 @@ twitter_username: xieziyi0422
 github_username:  zairesinatra
 wechat_username: xxxzzzyyybiu
 
+# 增加 favicon
+favicon: /assets/favicon.ico
+
 title-logo: /assets/img/zs.png
 
 copyright: "zairesinatra"
