@@ -25,8 +25,8 @@ LibreSSL SSL_read: SSL_ERROR_SYSCALL, errno 60
 
 问题原因：由于大文件造成的提交或者拉取失败，curl的postBuffer默认值太小，增大缓存配置即可
 
-```
-git config --global http.postBuffer 1048576000
+```zsh
+$ git config --global http.postBuffer 1048576000
 ```
 
 - **生成工具安装**
@@ -36,19 +36,19 @@ git config --global http.postBuffer 1048576000
 Jekyll 是基于 Ruby 的静态网页生成系统，首先安装 Ruby 环境：
 
 ```zsh
-brew install ruby
+$ brew install ruby
 ```
 
 Ruby 安装完毕后再执行 Jekyll 和 bundler 的安装命令：
 
 ```zsh
-gem install jekyll bundler
+$ gem install jekyll bundler
 ```
 
 这里可能遇见[报错](https://stackoverflow.com/questions/51126403/you-dont-have-write-permissions-for-the-library-ruby-gems-2-3-0-directory-ma)：
 
 ```zsh
-You don't have write permissions for the /Library/Ruby/Gems/2.3.0 directory. (mac user)
+# You don't have write permissions for the /Library/Ruby/Gems/2.6.0 directory. (mac user)
 ```
 
 问题原因：存在 macOS 附带的版本。
@@ -56,26 +56,26 @@ You don't have write permissions for the /Library/Ruby/Gems/2.3.0 directory. (ma
 如果确定不需要同时使用多个 Ruby 版本（除了 macOS 附带）则输入代码：
 
 ```zsh
-echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.zshrc
 ```
 
 该`3.0.0`表示的是 Homebrew 安装与启动的 Ruby 版本`3.0.0`。如果使用的是不同的版本（注意在 brew 查看版本）。
 
 ```zsh
 # 刷新
-source ~/.zshrc
+$ source ~/.zshrc
 ```
 
 检查现在是否使用的是非系统版本的 Ruby，运行以下命令：
 
 ```zsh
-which ruby
+$ which ruby
 ```
 
 此时应该是：`/usr/local/opt/ruby/bin/ruby` 而不是 `/usr/bin/ruby`
 
 ```zsh
-ruby -v
+$ ruby -v
 # xzy@zairesinatra-MBP ~ % ruby -v
 # ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-darwin20]
 ```
@@ -83,7 +83,7 @@ ruby -v
 现在则可以通过**非系统版本**的 Ruby 安装 bundler：
 
 ```zsh
-gem install bundler
+$ gem install bundler
 ```
 
 - **验证 theme 状态**
@@ -91,19 +91,19 @@ gem install bundler
 进入 Clone 下来的 GitHub Pages 项目的路径并执行以下命令：
 
 ```zsh
-jekyll new . --force
+$ jekyll new . --force
 ```
 
 这里可能遇见[报错](https://stackoverflow.com/questions/51126403/you-dont-have-write-permissions-for-the-library-ruby-gems-2-3-0-directory-ma)：
 
 ```zsh
 # 没有配置好环境变量
-You don't have write permissions for the /Library/Ruby/Gems/2.6.0 directory.
+# You don't have write permissions for the /Library/Ruby/Gems/2.6.0 directory.
 ```
 
 ```zsh
 # 补 webrick 库
-`require': cannot load such file -- webrick (LoadError)
+# 'require': cannot load such file -- webrick (LoadError)
 # 解决
 $ bundle add webrick
 ```
@@ -120,16 +120,16 @@ You specified: webrick (~> 1.7) and webrick (>= 0). Gem already added. Bundler c
 
  #  from injected gems:1
  #  -------------------------------------------
- >  gem "webrick", ">= 0"
+ # >  gem "webrick", ">= 0"
  #  -------------------------------------------
 ```
 
 完成后，Jekyll 会在刚才执行代码的指定的目录下生成 output 文件，使用如下命令可以通过访问 `127.0.0.1:4000` 查看初始界面：
 
 ```zsh
-bundle exec jekyll serve
-or
-bundle exec jekyll serve --livereload
+$ bundle exec jekyll serve
+# or
+$ bundle exec jekyll serve --livereload
 ```
 
 <img src = "https://res.cloudinary.com/dzb9ldnvl/image/upload/v1622892582/blog/buddle-add-webrick_nxxqbq.png" width="50%" />
@@ -146,11 +146,11 @@ bundle exec jekyll serve --livereload
 
 ```zsh
 # 搜索软件
-brew search software
+$ brew search software
 # 安装软件
-brew install software
+$ brew install software
 # 卸载软件
-brew uninstall brew install 
+$ brew uninstall brew install 
 ```
 
 -  Jekyll 之外静态模板系统 ：
