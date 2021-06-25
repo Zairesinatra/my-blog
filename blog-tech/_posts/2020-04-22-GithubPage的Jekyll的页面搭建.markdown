@@ -97,15 +97,18 @@ jekyll new . --force
 这里可能遇见[报错](https://stackoverflow.com/questions/51126403/you-dont-have-write-permissions-for-the-library-ruby-gems-2-3-0-directory-ma)：
 
 ```zsh
+# 没有配置好环境变量
 You don't have write permissions for the /Library/Ruby/Gems/2.6.0 directory.
 ```
 
-注意：[Ruby 3.0 不再带有 webrick](https://github.com/jekyll/jekyll/issues/8523) ：
-
 ```zsh
 # 补 webrick 库
-bundle add webrick
+`require': cannot load such file -- webrick (LoadError)
+# 解决
+$ bundle add webrick
 ```
+
+注意：[Ruby 3.0 不再带有 webrick](https://github.com/jekyll/jekyll/issues/8523) ：
 
 若补库过程中出现解析错误，意思是已添加，不必再添加：
 
@@ -172,4 +175,4 @@ brew uninstall brew install
 
 ### 以上
 
-本博客所有文章除特别声明外，均采用 CC BY-SA 4.0 协议 ，转载请注明出处！
+本博客所有文章除特别声明外，均采用 [CC BY-SA 4.0 协议](https://creativecommons.org/licenses/by-sa/4.0/deed.zh) ，转载请注明出处！
