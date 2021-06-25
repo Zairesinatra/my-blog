@@ -7,7 +7,7 @@ category: Bughandle
 
 ## 报错场景：
 
-日常翻车：把自己的导航网页挂 Ubuntu 服务器后出现如下报错代码：
+日常翻车：站点挂 Ubuntu 服务器后出现如下报错代码：
 <pre>
 Mixed Content: The page at 'https://nav.zairesinatra.com/' was loaded over HTTPS, but requested an insecure script 'http://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js'. This request has been blocked; the content must be served over HTTPS.
 </pre>

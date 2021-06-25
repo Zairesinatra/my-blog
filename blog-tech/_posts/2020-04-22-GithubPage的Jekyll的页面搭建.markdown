@@ -5,7 +5,7 @@ date:   2020-04-22 20:58:08 +0800
 category: Tech
 ---
 
-# 基于 Github 和 Jekyll 的页面搭建
+# GithubPage 的 Jekyll 的页面搭建
 
 ------
 
@@ -56,10 +56,10 @@ You don't have write permissions for the /Library/Ruby/Gems/2.3.0 directory. (ma
 如果确定不需要同时使用多个 Ruby 版本（除了 macOS 附带）则输入代码：
 
 ```zsh
-echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.zshrc
 ```
 
-该`2.7.0`在上面的命令假定 Homebrew 安装与启动一个Ruby版本`2.7`。如果使用的是不同的版本（可以使用 进行检查`ruby -v`），则替换`2.7`为查看的 Ruby 版本的前两位数字。
+该`3.0.0`表示的是 Homebrew 安装与启动的 Ruby 版本`3.0.0`。如果使用的是不同的版本（注意在 brew 查看版本）。
 
 ```zsh
 # 刷新
@@ -72,7 +72,7 @@ source ~/.zshrc
 which ruby
 ```
 
-应该是： `/usr/bin/ruby`
+此时应该是：`/usr/local/opt/ruby/bin/ruby` 而不是 `/usr/bin/ruby`
 
 ```zsh
 ruby -v
@@ -80,7 +80,7 @@ ruby -v
 # ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-darwin20]
 ```
 
-现在则可以通过非系统版本的 Ruby 安装 bundler：
+现在则可以通过**非系统版本**的 Ruby 安装 bundler：
 
 ```zsh
 gem install bundler
@@ -100,10 +100,25 @@ jekyll new . --force
 You don't have write permissions for the /Library/Ruby/Gems/2.6.0 directory.
 ```
 
-问题原因：[Ruby 3.0 不再带有 webrick](https://github.com/jekyll/jekyll/issues/8523) ：
+注意：[Ruby 3.0 不再带有 webrick](https://github.com/jekyll/jekyll/issues/8523) ：
 
 ```zsh
-bundle add webrick # 补 webrick 库
+# 补 webrick 库
+bundle add webrick
+```
+
+若补库过程中出现解析错误，意思是已添加，不必再添加：
+
+```zsh
+$ bundle add webrick
+
+[!] There was an error parsing `injected gems`: You cannot specify the same gem twice with different version requirements.
+You specified: webrick (~> 1.7) and webrick (>= 0). Gem already added. Bundler cannot continue.
+
+ #  from injected gems:1
+ #  -------------------------------------------
+ >  gem "webrick", ">= 0"
+ #  -------------------------------------------
 ```
 
 完成后，Jekyll 会在刚才执行代码的指定的目录下生成 output 文件，使用如下命令可以通过访问 `127.0.0.1:4000` 查看初始界面：
