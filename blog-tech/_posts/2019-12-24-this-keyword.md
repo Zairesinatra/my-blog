@@ -87,7 +87,7 @@ e(); // 赋值了b.teacher()的输出=> var e = f(){console.log(this.name)} => �
 
 **硬绑定：**
 
-通常为 `apply()` 或者是 `call()` 改变函数的调用对象。第一个参数就表示**改变后**的调用这个函数的对象。因此，`this`指的就是这第一个参数。也就是说，将<u>所用方法指定绑定到目的对象中</u>：
+通常为 `apply()` 或者是 `call()` 改变函数的调用对象（将另一个对象作为参数调用对象方法）。第一个参数就表示**改变后**的调用这个函数的对象。因此，`this`指的就是这第一个参数。也就是说，将<u>所用方法指定绑定到目的对象中</u>：
 
 ```js
 // 硬绑定call与apply皆可
@@ -158,11 +158,51 @@ var zy = new dev('zss') // 输入进行变量实例化,这时this与实例化后
 zy.sayName(); // dev是zss
 ```
 
+**箭头函数绑定：**
+
+箭头函数的`this`对象，就是**外部环境所在的作用域指向的对象**，而不是使用时所在的作用域指向的对象，即并不是由自身决定（并不属于自身）的：
+
+```js
+var name = 'window'; 
+var A = {
+name: 'A',
+sayHello: () => {
+    console.log(this.name)
+    }
+}
+A.sayHello(); // window
+```
+
+```js
+var name = 'window';
+var A = {
+    name: 'A',
+    sayHello: function(){
+        return arrow = () => console.log(this.name) // 返回箭头函数
+    }
+}
+var sayHello = A.sayHello();
+sayHello(); // A 
+var B = {
+   name: 'B'
+}
+sayHello.call(B); // A
+sayHello.apply(); // A
+// sayHello.bind() 不会输出结果 => bind方法返回的是綁绑定 this 后的原函数
+sayHello.bind()(); // A
+```
+
+箭头函数在定义时就完成了 `this` 绑定，执行时调用位置、用 `call()`、`apply()`、`bind()` 都无法更改。
+
 ---
 
 ### 结束：
 
-总结一下，`this`就是函数运行时所在的环境对象，会根据使用场合存在不同的绑定方式。此外，勿忘在严格模式和非严格模式之间的差别。
+总结一下：
+
+1.`this`就是函数运行时所在的环境对象，会根据使用场合存在不同的绑定方式。此外，勿忘在严格模式和非严格模式之间的差别。
+
+2.`call()`、`apply()`都是回调 func 执行结果，而 `bind()` 方法回调的是绑定 `this` 后的原函数。
 
 ### 以上
 
