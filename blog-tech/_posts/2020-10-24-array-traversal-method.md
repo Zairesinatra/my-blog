@@ -103,7 +103,7 @@ zsarr.forEach(() => {
 
 ## 结束：
 
-如果不需要关注索引问题， `for (const v of arr)`是最稳定的遍历方式，特例较少。若出现需要考虑索引的情况可以使用 `Array.prototype.entries()` 返回一个新的[数组迭代器对象](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)，该对象包含数组中每个索引的键/值对。
+如果不需要关注索引问题， `for (const v of arr)`是最稳定的遍历方式，特例较少，支持 break （`forEach不支持`）。若出现需要考虑索引的情况可以使用 `Array.prototype.entries()` 返回一个新的[数组迭代器对象](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)，该对象包含数组中每个索引的键/值对。
 
 ```js
 const zsarr = ['a', 'b', 'c'];
